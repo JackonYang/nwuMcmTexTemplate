@@ -1,0 +1,13 @@
+% 更好的中文显示
+\renewcommand{\contentsname}{\heiti \sihao 目录}
+% 论文题目和摘要写在一页上，从这一页开始编写页面
+\newenvironment{mcmabstract}[2]{
+    \makepapertitle{#1}
+    \vspace{\baselineskip}
+    \begin{center}{\heiti\sihao 摘 \quad 要}\end{center}
+    \setcounter{page}{1}\par
+    }  % setting at the beginning
+    {\newpage
+    \tableofcontents\newpage}  % setting at the end
+\newcommand{\keyword}[1]{{\vspace{\baselineskip}{\heiti 关键词：}}{#1}}
+

@@ -1,0 +1,46 @@
+\usepackage{indentfirst} % 首行缩进
+
+% 字体
+\newcommand*{\songti}{\CJKfamily{song}}  % 宋体
+\newcommand*{\heiti}{\CJKfamily{hei}}  % 黑体
+% 字号
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+%%%%%%%%%%% 题目标题格式设置 %%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage{titletoc}
+% 论文题目用三号黑体字
+\newcommand{\makepapertitle}[1]{{\begin{center}\sanhao\heiti{#1}\end{center}}}
+% 一级标题用四号黑体字，并居中；
+\titleformat{\section}[hang]{\centering\heiti\sihao}{\sihao \arabic{section}}{0.5em}{}
+% 二级、三级标题用小四号黑体字，左端对齐（不居中）。
+\titleformat{\subsection}[hang]{\flushleft\heiti\xiaosi}{\xiaosi \arabic{section}.\arabic{subsection}}{0.5em}{}
+\titleformat{\subsubsection}[hang]{\flushleft\heiti\xiaosi}{\xiaosi \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}{0.5em}{}
+% 论文中其他汉字一律采用小四号宋体字
+% 已在 \documentclass 处设置 12pt. 另 \begin{CJK*}{GBK}{song}
+
+%%%%%%%%%%%% 页面与行间距设置 %%%%%%%%%%%%%%%%%%%
+% 单倍行距
+\renewcommand{\baselinestretch}{1}
+% 上下左右各留出至少2.5厘米的页边距
+\usepackage[margin=2.5cm]{geometry}
+% 论文不能有页眉
+\pagestyle{plain}
+% 页码必须位于每页页脚中部，用阿拉伯数字从“1”开始连续编号。
+\pagenumbering{arabic}
+% 论文用白色A4纸单面打印
+% 已在 \documentclass 处设置 a4paper, oneside
+%%%----------------basic settings done--------------------%%%
+% 强调命令，标准当前的关键词。采用与二三级标题相同的字体格式。
+\renewcommand{\em}[1]{\vspace{\baselineskip}{\heiti\xiaosi {#1}}\vspace{\baselineskip}}
